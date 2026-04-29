@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "RaiStep",
+    "slug": "raistep",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,20 +10,42 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#6C63FF"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMotionUsageDescription": "RaiStep needs access to motion data to count your steps and track your fitness activity.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.orlando2699.raistep"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#6C63FF"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION"
+      ],
+      "package": "com.orlando2699.raistep"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Allow RaiStep to access your device motion to count steps."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bb7b9506-ba8f-4ab3-9057-252811c0f9b2"
+      }
     }
   }
 }
